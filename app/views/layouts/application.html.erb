@@ -23,12 +23,18 @@
             <li class="nav-item">
               <%= link_to 'Home', user_path(current_user.id), class: 'fas fa-home nav-link text-light' %>
             </li>
-            <li class="nav-item">
-              <%= link_to '投稿フォーム', new_post_image_path, class: 'nav-link text-light' %>
-            </li>
             
             <li class="nav-item">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+              <%= link_to 'Users', new_post_image_path, class: 'fas fa-user nav-link text-light' %>
+            </li>
+            
+            <li>
+              <%= link_to "Books", books_path, class: "fas fa-book nav-link text-light" %>
+            </li>
+            
+            
+            <li class="nav-item">
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-light' %>
             </li>
             
             <% else %>
