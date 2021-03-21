@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+     <p style="color:red" id="notice">
+       <%= flash[:notice] %>
+     </p>
+<% end %>
+   
 <div class="profile-container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
@@ -32,3 +38,23 @@
         <%= f.submit "Create Book" %>
       <% end %>
     </div>
+    
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table table-hover table-inverse">
+        
+        <tbody>
+         
+            <tr>
+              <td><%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %> %></td>
+              <td><%= @book.title %></td>
+              <td><%= @book.opinion %></td>
+              <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+              <td><%= link_to "Destroy", books_path(@book.id), method: :delete data: { confirm: '本当に削除しますか？' } %></td>
+            </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
