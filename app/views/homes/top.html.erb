@@ -1,9 +1,16 @@
+<% if flash[:notice] %>
+     <p style="color:red" id="notice">
+       <%= flash[:notice] %>
+     </p>
+<% end %>
+
+
 <div class="container">
   <div class="row">
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
       <h1>welcome to
         <i class="fas fa-book">
-            
+
         </i>
         <strong>Bookers</strong>
          !!
@@ -11,12 +18,12 @@
     <p>
         In
       <i class="fas fa-book">
-        
+
       </i>
       <strong>Bookers</strong>
       ,
-    </p>  
-  
+    </p>
+
     <p>you can share and exchange your opinions , inpressions,
     and emotions
     </p>
@@ -24,8 +31,8 @@
     <p>about various books!</p>
     <div class="btn-wrapper col-10 mx-auto">
       <div class="row">
-        <a class="btn btn-info btn-sm btn-block mb-3 sign_in"
-        href="/users/sign_in">Log in</a>
+        
+        <%= link_to "Log in", "/users/sign_in", class: "btn btn-info btn-sm btn-block mb-3" %>
       </div>
       <div class="row">
         <a class="btn btn-success btn-sm btn-block sign_up"
