@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
+  before_action :book_edit_check,only: [:edit]
   def index
     @user = User.find(current_user[:id])
     logger.debug(@user.to_yaml)
@@ -54,5 +55,12 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+  
+  def book_edit_check
+    @book = Book.find(params[:id])
+    if @book.user != current_user
+      redirect_to books_path
+    end
   end
 end
