@@ -14,16 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_094030) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.text "body"
-  end
-
-  create_table "post_images", force: :cascade do |t|
-    t.text "shop_name"
-    t.string "image_id"
-    t.text "caption"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
